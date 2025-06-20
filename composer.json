@@ -1,10 +1,14 @@
 {
-    "name": "upyun/sdk",
-    "description": "UPYUN sdk for php",
+    "name": "ltqio/upyun-php-sdk",
+    "description": "Unofficial fork of upyun/php-sdk, compatible with Laravel 12 / Guzzle 7",
+    "support": {
+        "source": "https://github.com/ltqio/upyun-php-sdk",
+        "issues": "https://github.com/ltqio/upyun-php-sdk/issues"
+    },
     "keywords": ["UPYUN", "sdk"],
     "type": "library",
     "minimum-stability": "stable",
-    "homepage": "https://github.com/upyun/php-sdk/",
+    "homepage": "https://github.com/ltqio/upyun-php-sdk",
     "license": "MIT",
     "require": {
         "php": ">=5.5.0",
@@ -32,12 +36,16 @@
             "email": "riyao.lyu@gmail.com"
         },
         {
-          "name": "totoleo",
-          "email": "totoleo@163.com"
+            "name": "totoleo",
+            "email": "totoleo@163.com"
         },
         {
-          "name": "sabakugaara",
-          "email": "senellise@gmail.com"
+            "name": "sabakugaara",
+            "email": "senellise@gmail.com"
+        },   
+        {
+            "name": "ltqio",
+            "email": "ltqio@outlook.com"
         }
     ]
 }

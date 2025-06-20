@@ -1,4 +1,17 @@
 # 又拍云 SDK for PHPer
+
+> ⚠️ **免责声明 / DISCLAIMER：本仓库为非官方维护版本**
+
+本项目基于官方 [`upyun/php-sdk`](https://github.com/upyun/php-sdk) 进行修改，主要用于适配：
+- PHP 8.3+
+- Laravel 12+
+- Guzzle 7+
+
+**本项目与又拍云官方无直接关系，不代表官方立场或技术支持。请谨慎用于生产环境。**
+如需官方版本请访问：[https://github.com/upyun/php-sdk](https://github.com/upyun/php-sdk)
+
+---
+
 [![Build Status](https://scrutinizer-ci.com/g/upyun/php-sdk/badges/build.png?b=master)](https://scrutinizer-ci.com/g/upyun/php-sdk/build-status/master) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/upyun/php-sdk/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/upyun/php-sdk/?branch=master) [![Code Coverage](https://scrutinizer-ci.com/g/upyun/php-sdk/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/upyun/php-sdk/?branch=master) 
 
 又拍云 PHP SDK，封装了[又拍云功能丰富的开放 API](http://docs.upyun.com/api/) ，帮助开发者快速对接文件云端存储、图片音视频云处理、智能鉴黄等功能
@@ -54,14 +67,10 @@ SDK 包含如下功能
 建议使用速度很快的国内[全量镜像](https://pkg.phpcomposer.com/#how-to-use-packagist-mirror)([又拍云赞助](https://pkg.phpcomposer.com/#donation))
 
 ```
-composer require upyun/sdk
+composer require ltqio/upyun-php-sdk
 ```
 
-2.如果不适应 `composer` 管理，可以直接下载[压缩包](https://github.com/upyun/php-sdk/releases)(注意需要下载 `php-sdk-版本号.zip` 格式的 zip 压缩包，不是 Source code 源码压缩包)，解压后，项目中添加如下代码：
 
-```
-require_once '/path/to/php-sdk/vendor/autoload.php';
-```
 <a name="doc"></a>
 ### 文档
 
@@ -73,8 +82,7 @@ require_once '/path/to/php-sdk/vendor/autoload.php';
 先初始化又拍云服务配置：
 
 ```php
-require_once('vendor/autoload.php'); // 只针对使用 composer 安装
-// require_once '/path/to/php-sdk/vendor/autoload.php'; // 针对压缩包安装
+require_once('vendor/autoload.php'); 
 
 use Upyun\Upyun;
 use Upyun\Config;
@@ -138,3 +146,11 @@ UPYUN PHP-SDK 基于 MIT 开源协议
 
 <http://www.opensource.org/licenses/MIT>
 
+<a name="unofficial"></a>
+## 🛡️ 关于本 Fork
+
+- 本项目由社区开发者 fork 并适配新版本 PHP 及 Laravel；
+- 不承诺完全兼容官方 API，如有疑问请优先参考官方文档；
+- 欢迎 Issues 或 PR 协助维护。
+
+---
