@@ -7,6 +7,7 @@ use GuzzleHttp\Psr7;
 use Upyun\Config;
 use Upyun\Signature;
 use Upyun\Util;
+use GuzzleHttp\Psr7\Utils;
 
 class Rest
 {
@@ -47,7 +48,7 @@ class Rest
      */
     public function withFile($file)
     {
-        $stream = Psr7\stream_for($file);
+        $stream = Utils::streamFor($file);
         $this->file = $stream;
 
         return $this;

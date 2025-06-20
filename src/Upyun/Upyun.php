@@ -9,6 +9,7 @@ use Upyun\Api\Rest;
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7;
 use GuzzleHttp;
+use GuzzleHttp\Psr7\Utils;
 
 /**
  * Class Upyun
@@ -154,7 +155,7 @@ class Upyun
 
         if (! isset($params['x-upyun-list-iter'])) {
             if (is_resource($saveHandler)) {
-                Psr7\copy_to_stream($response->getBody(), Psr7\stream_for($saveHandler));
+                Psr7\copy_to_stream($response->getBody(), Utils::streamFor($saveHandler));
                 return true;
             } else {
                 return $response->getBody()->getContents();
