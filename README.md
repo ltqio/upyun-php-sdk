@@ -58,7 +58,7 @@ SDK 包含如下功能
 <a name="install"></a>
 ### 安装
 
-#### PHP >= 5.5
+#### PHP >= 8.3
 
 1.使用 `composer` 安装
 
