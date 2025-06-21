@@ -19,8 +19,8 @@ function getUpyunFileSize($path)
 {
     $url = getFileUrl($path);
     $client = new Client([
-        'timeout' => 10,
-        'connect_timeout' => 5,
+        'timeout' => 25,
+        'connect_timeout' => 20,
         'http_errors' => false,
     ]);
 
