@@ -13,7 +13,7 @@ class SignatureTest extends TestCase
      */
     public $config;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->config = new Config('bucket', 'operator', 'password');
     }
