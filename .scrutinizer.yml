@@ -1,23 +1,25 @@
 build:
-    environment:
-        php:
-            version: 8.3.22
-    dependencies:
-        before:
-            - composer install
-    tests:
-        override:
-            -
-                command: phpunit
-                coverage:
-                    file: coverage.clover
-                    format: clover
+  environment:
+    php:
+      version: 8.3.22
+
+  dependencies:
+    before:
+      - composer install --prefer-dist --no-interaction --no-progress
+
+  tests:
+    override:
+      - command: vendor/bin/phpunit --coverage-clover=coverage.clover
+        coverage:
+          file: coverage.clover
+          format: clover
+
 filter:
-    paths:
-        - 'src/*'
-        - 'tests/*'
+  paths:
+    - 'src/*'
+    - 'tests/*'
 
 tools:
-    php_code_sniffer:
-        config:
-            standard: PSR2
+  php_code_sniffer:
+    config:
+      standard: PSR2
