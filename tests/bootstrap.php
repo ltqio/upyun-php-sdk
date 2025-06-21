@@ -1,6 +1,9 @@
 <?php
 require dirname(__DIR__) . '/vendor/autoload.php';
 
+use GuzzleHttp\Client;
+use GuzzleHttp\Exception\RequestException;
+
 define('USER_NAME', 'tester');
 define('PWD', 'grjxv2mxELR3');
 define('BUCKET', 'sdkimg');
@@ -15,17 +18,24 @@ function getFileUrl($path)
 function getUpyunFileSize($path)
 {
     $url = getFileUrl($path);
-    $ch = curl_init($url);
-    curl_setopt($ch, CURLOPT_NOBODY, true);
-    curl_setopt($ch, CURLOPT_HEADER, true);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    $return = curl_exec($ch);
-    preg_match('~^HTTP/1.1 (\d{3})~', $return, $match1);
-    preg_match('~Content-Length: (\d+)~', $return, $match2);
+    $client = new Client([
+        'timeout' => 10,
+        'connect_timeout' => 5,
+        'http_errors' => false,
+    ]);
 
-    if (isset($match1[1]) && $match1[1] == 200) {
-        return isset($match2[1]) ? intval($match2[1]) : false;
-    } else {
-        return false;
+    for ($i = 0; $i < 3; $i++) {
+        try {
+            $response = $client->head($url);
+            if ($response->getStatusCode() === 200) {
+                return (int) $response->getHeaderLine('Content-Length');
+            }
+        } catch (RequestException $e) {
+            // 忽略网络异常，继续重试
+        }
+        usleep(500000); // 等待 500ms
     }
+
+    return false;
 }
+
