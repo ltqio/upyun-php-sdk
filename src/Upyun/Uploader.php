@@ -68,7 +68,7 @@ class Uploader
         $res = $req->request('PUT', $path)
             ->withHeaders(array_merge(array(
                 'X-Upyun-Multi-Stage' => 'initiate',
-                'X-Upyun-Multi-Type' => Psr7\mimetype_from_filename($path),
+                'X-Upyun-Multi-Type' => mime_content_type($path),
                 'X-Upyun-Multi-Length' => $stream->getSize(),
             ), $headers))
             ->send();
@@ -147,7 +147,7 @@ class Uploader
             ->withHeaders(array_merge(array(
                 'X-Upyun-Multi-Disorder' => 'true',
                 'X-Upyun-Multi-Stage' => 'initiate',
-                'X-Upyun-Multi-Type' => Psr7\mimetype_from_filename($path),
+                'X-Upyun-Multi-Type' => mime_content_type($path),
                 'X-Upyun-Multi-Length' => $stream->getSize(),
             ), $headers))
             ->send();
