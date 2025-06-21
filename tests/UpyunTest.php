@@ -113,13 +113,11 @@ class UpyunTest extends TestCase
         self::$upyun->write('test-delete.txt', 'test file content 3');
         sleep(5);
         self::$upyun->delete('test-delete.txt');
-        try {
-            self::$upyun->read('test-delete.txt');
-        } catch (\Exception $e) {
-            return ;
-        }
-        throw new \Exception('delete file failed');
+
+        $this->expectException(\Exception::class);
+        self::$upyun->read('test-delete.txt');
     }
+
 
     /**
      * @expectedException \Exception
