@@ -1,4 +1,14 @@
-# 又拍云 SDK for PHPer
+# Upyun PHP SDK (Unofficial Fork for PHP 8.3 & Laravel 12)
+
+[![test](https://github.com/ltqio/upyun-php-sdk/actions/workflows/test.yml/badge.svg)](https://github.com/ltqio/upyun-php-sdk/actions/workflows/test.yml)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/ltqio/upyun-php-sdk/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/ltqio/upyun-php-sdk/?branch=master)
+[![Code Coverage](https://scrutinizer-ci.com/g/ltqio/upyun-php-sdk/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/ltqio/upyun-php-sdk/?branch=master)
+[![Build Status](https://scrutinizer-ci.com/g/ltqio/upyun-php-sdk/badges/build.png?b=master)](https://scrutinizer-ci.com/g/ltqio/upyun-php-sdk/build-status/master)
+[![Code Intelligence Status](https://scrutinizer-ci.com/g/ltqio/upyun-php-sdk/badges/code-intelligence.svg?b=master)](https://scrutinizer-ci.com/g/ltqio/upyun-php-sdk/?branch=master)
+
+[![Latest Stable Version](https://poser.pugx.org/ltqio/upyun-php-sdk/v/stable)](https://packagist.org/packages/ltqio/upyun-php-sdk)
+[![Total Downloads](https://poser.pugx.org/ltqio/upyun-php-sdk/downloads)](https://packagist.org/packages/ltqio/upyun-php-sdk)
+
 
 > ⚠️ **免责声明 / DISCLAIMER：本仓库为非官方维护版本**
 
@@ -7,12 +17,16 @@
 - Laravel 12+
 - Guzzle 7+
 
+
+📝 查看完整更新日志：[CHANGELOG.md](CHANGELOG.md)
+
+
 **本项目与又拍云官方无直接关系，不代表官方立场或技术支持。请谨慎用于生产环境。**
 如需官方版本请访问：[https://github.com/upyun/php-sdk](https://github.com/upyun/php-sdk)
 
 ---
 
-[![Build Status](https://scrutinizer-ci.com/g/upyun/php-sdk/badges/build.png?b=master)](https://scrutinizer-ci.com/g/upyun/php-sdk/build-status/master) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/upyun/php-sdk/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/upyun/php-sdk/?branch=master) [![Code Coverage](https://scrutinizer-ci.com/g/upyun/php-sdk/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/upyun/php-sdk/?branch=master) 
+ 
 
 又拍云 PHP SDK，封装了[又拍云功能丰富的开放 API](http://docs.upyun.com/api/) ，帮助开发者快速对接文件云端存储、图片音视频云处理、智能鉴黄等功能
 
