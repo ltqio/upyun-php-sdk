@@ -78,14 +78,13 @@ class UpyunTest extends TestCase
 
     public function testWriteWithException()
     {
+        $this->expectException(\Exception::class);
+        
         $fs = new Upyun(new Config(BUCKET, USER_NAME, 'error-password'));
-        try {
-            $fs->write('test.txt', 'test file content');
-        } catch (\Exception $e) {
-            return ;
-        }
-        throw new \Exception('should get sign error.');
+        $fs->write('test.txt', 'test file content');
     }
+
+    
 
     /**
      * @depends testWriteString
