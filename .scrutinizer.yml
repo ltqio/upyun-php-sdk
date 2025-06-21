@@ -1,23 +1,12 @@
 build:
-  environment:
-    php:
-      version: 8.3.22
+  nodes:
+    analysis:
+      tests:
+        override:
+          - php-scrutinizer-run
 
-  dependencies:
-    before:
-      - composer install --prefer-dist --no-interaction --no-progress
-
-  tests:
-    override:
-      - command: XDEBUG_MODE=coverage vendor/bin/phpunit --coverage-clover=coverage.clover
-        coverage:
-          file: coverage.clover
-          format: clover
-
-filter:
-  paths:
-    - 'src/*'
-    - 'tests/*'
+checks:
+  php: true  # 启用 Scrutinizer PHP 内建分析（包括 Code Rating）
 
 tools:
   php_code_sniffer:
