@@ -111,7 +111,7 @@ class UpyunTest extends TestCase
     public function testDeleteFile()
     {
         self::$upyun->write('test-delete.txt', 'test file content 3');
-        sleep(5);
+        sleep(8);
         self::$upyun->delete('test-delete.txt');
 
         $this->expectException(\Exception::class);
@@ -135,9 +135,9 @@ class UpyunTest extends TestCase
         $name = 'test-has.txt';
         self::$upyun->write($name, 'test file content 4');
         $this->assertEquals(self::$upyun->has($name), true);
-        sleep(5);
+        sleep(8);
         self::$upyun->delete($name);
-        sleep(5);
+        sleep(8);
         $this->assertEquals(self::$upyun->has($name), false);
     }
 
@@ -193,7 +193,7 @@ class UpyunTest extends TestCase
     {
         $result = self::$upyun->createDir('/test-delete-dir');
         $this->assertEquals($result, true);
-        sleep(5);
+        sleep(8);
         $result = self::$upyun->deleteDir('/test-delete-dir');
         $this->assertEquals($result, true);
     }
@@ -212,7 +212,7 @@ class UpyunTest extends TestCase
         $source = 'test-copy.txt';
         $target = 'test-copy-target.txt';
         self::$upyun->write($source, 'test file content 6');
-        sleep(5);
+        sleep(8);
         self::$upyun->copy($source, $target);
         $this->assertEquals(self::$upyun->has($target), true);
     }
@@ -225,7 +225,7 @@ class UpyunTest extends TestCase
         $source = 'test-move.txt';
         $target = 'test-move-target.txt';
         self::$upyun->write($source, 'test file content 7');
-        sleep(5);
+        sleep(8);
         self::$upyun->move($source, $target);
         $this->assertEquals(self::$upyun->has($source), false);
         $this->assertEquals(self::$upyun->has($target), true);
@@ -265,7 +265,7 @@ class UpyunTest extends TestCase
      */
     public function testQueryProcessStatus()
     {
-        sleep(5);
+        sleep(8);
         $status = self::$upyun->queryProcessStatus(array(self::$taskId));
         $this->assertTrue(array_key_exists(self::$taskId, $status));
     }
@@ -275,7 +275,7 @@ class UpyunTest extends TestCase
      */
     public function testQueryProcessResult()
     {
-        sleep(5);
+        sleep(8);
         $result = self::$upyun->queryProcessResult(array(self::$taskId));
         $this->assertTrue($result[self::$taskId]['path'][0] === '/video/result.mp4');
         $this->assertTrue($result[self::$taskId]['status_code'] === 200);
@@ -292,7 +292,7 @@ class UpyunTest extends TestCase
 
     public function testSnapshot()
     {
-        sleep(5);
+        sleep(8);
         $source = 'php-sdk-sample.mp4';
         self::$upyun->write($source, fopen(__DIR__ . '/assets/SampleVideo_640x360_1mb.mp4', 'r'));
         $result = self::$upyun->snapshot('/php-sdk-sample.mp4', '/snapshot.jpg', '00:00:01', '720x480', 'jpg');
