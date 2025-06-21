@@ -3,8 +3,9 @@ namespace Upyun\Tests;
 
 use Upyun\Config;
 use Upyun\Upyun;
+use PHPUnit\Framework\TestCase;
 
-class UpyunTest extends \PHPUnit_Framework_TestCase
+class UpyunTest extends TestCase
 {
 
     /**
@@ -17,7 +18,7 @@ class UpyunTest extends \PHPUnit_Framework_TestCase
 
     protected static $tempFilePath;
 
-    public static function setUpBeforeClass()
+    public static function setUpBeforeClass(): void
     {
         $config = new Config(BUCKET, USER_NAME, PWD);
         $config->setFormApiKey('Mv83tlocuzkmfKKUFbz2s04FzTw=');
@@ -27,7 +28,7 @@ class UpyunTest extends \PHPUnit_Framework_TestCase
         touch(self::$tempFilePath);
     }
 
-    public static function tearDownAfterClass()
+    public static function tearDownAfterClass(): void
     {
         unlink(self::$tempFilePath);
     }
@@ -126,6 +127,7 @@ class UpyunTest extends \PHPUnit_Framework_TestCase
      */
     public function testDeleteNotExistsFile()
     {
+        $this->expectException(\Exception::class);
         self::$upyun->delete('not-exists-test.txt');
     }
 
