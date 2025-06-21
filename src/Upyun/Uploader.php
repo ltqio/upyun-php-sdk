@@ -7,7 +7,7 @@ use GuzzleHttp\Psr7;
 use GuzzleHttp\Pool;
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\Utils;
-use Upyun\Util\MimeUtil;
+use GuzzleHttp\Psr7\MimeType;
 
 class Uploader
 {
@@ -69,7 +69,7 @@ class Uploader
         $res = $req->request('PUT', $path)
             ->withHeaders(array_merge(array(
                 'X-Upyun-Multi-Stage' => 'initiate',
-                'X-Upyun-Multi-Type' => MimeUtil::fromFilename($path),
+                'X-Upyun-Multi-Type' => MimeType::fromFilename($path),
                 'X-Upyun-Multi-Length' => $stream->getSize(),
             ), $headers))
             ->send();
@@ -148,7 +148,7 @@ class Uploader
             ->withHeaders(array_merge(array(
                 'X-Upyun-Multi-Disorder' => 'true',
                 'X-Upyun-Multi-Stage' => 'initiate',
-                'X-Upyun-Multi-Type' => MimeUtil::fromFilename($path),
+                'X-Upyun-Multi-Type' => MimeType::fromFilename($path),
                 'X-Upyun-Multi-Length' => $stream->getSize(),
             ), $headers))
             ->send();
