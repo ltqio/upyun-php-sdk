@@ -275,7 +275,7 @@ class UpyunTest extends TestCase
      */
     public function testQueryProcessResult()
     {
-        sleep(15);
+        sleep(30);
         $result = self::$upyun->queryProcessResult(array(self::$taskId));
         $this->assertTrue($result[self::$taskId]['path'][0] === '/video/result.mp4');
         $this->assertTrue($result[self::$taskId]['status_code'] === 200);
