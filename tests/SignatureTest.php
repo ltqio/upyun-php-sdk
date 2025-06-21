@@ -3,8 +3,9 @@ namespace Upyun\Tests;
 
 use Upyun\Signature;
 use Upyun\Config;
+use PHPUnit\Framework\TestCase;
 
-class SignatureTest extends \PHPUnit_Framework_TestCase
+class SignatureTest extends TestCase
 {
 
     /**
