@@ -155,7 +155,7 @@ class Upyun
 
         if (! isset($params['x-upyun-list-iter'])) {
             if (is_resource($saveHandler)) {
-                Psr7\copy_to_stream($response->getBody(), Utils::streamFor($saveHandler));
+                Utils::copy_to_stream($response->getBody(), Utils::streamFor($saveHandler));
                 return true;
             } else {
                 return $response->getBody()->getContents();
