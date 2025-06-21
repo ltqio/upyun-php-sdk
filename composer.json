@@ -1,11 +1,11 @@
 {
     "name": "ltqio/upyun-php-sdk",
-    "description": "Unofficial fork of upyun/php-sdk, compatible with Laravel 12 / Guzzle 7",
+    "description": "Modern fork of the official Upyun PHP SDK with PHP 8.3 support, PHPUnit 9 compatibility, and Laravel 12 support.",
     "support": {
         "source": "https://github.com/ltqio/upyun-php-sdk",
         "issues": "https://github.com/ltqio/upyun-php-sdk/issues"
     },
-    "keywords": ["UPYUN", "sdk"],
+    "keywords": ["upyun", "php", "sdk", "laravel12", "php8.3", "guzzle7", "fork"],
     "type": "library",
     "minimum-stability": "stable",
     "homepage": "https://github.com/ltqio/upyun-php-sdk",
@@ -23,6 +23,9 @@
     },
     "autoload-dev": {
         "psr-4": { "Upyun\\Tests\\": "tests/" }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit"
     },
     "authors": [
         {
